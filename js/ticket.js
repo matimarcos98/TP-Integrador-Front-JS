@@ -14,7 +14,8 @@ function informar_costo(evento){
     costo_categoria = categoria.value;
     text = categoria.options[categoria.selectedIndex].text;
     total = (valor_ticket - (valor_ticket * costo_categoria / 100)) * Number(quantity.value);
-    totalCost.innerText += `${total}`;
+    if (total > 0)
+        totalCost.innerText += `${total}`;
 }
 
 btn_borrar = document.getElementById('boton-borrar');
